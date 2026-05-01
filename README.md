@@ -6,8 +6,8 @@ A full-stack, role-based task management web application built to facilitate tea
 
 ## 🌐 Live Deployment
 
-- Frontend (Vercel): https://team-task-manager-sandy.vercel.app/login 
-- Backend API (Railway): team-task-manager-production-2380.up.railway.app 
+- Frontend (Vercel): https://team-task-manager-sandy.vercel.app/login  
+- Backend API (Railway): https://team-task-manager-production-2380.up.railway.app  
 - Demo Video: https://drive.google.com/file/d/1l97Qz85ZIp9vHHAG5yKdv4mcQRI9rfCG/view?usp=sharing  
 
 ---
@@ -16,13 +16,13 @@ A full-stack, role-based task management web application built to facilitate tea
 
 This application fulfills all required assignment criteria:
 
-- ✔ Authentication (Signup/Login using JWT)
-- ✔ Project & Team Management (create projects, manage members)
-- ✔ Task Management (create, assign, update status)
-- ✔ Dashboard (task statistics, overdue tracking)
-- ✔ Role-Based Access Control (Admin / Member)
-- ✔ REST API with MongoDB database
-- ✔ Deployed and fully functional
+- Authentication (Signup/Login using JWT)
+- Project & Team Management (create projects, manage members)
+- Task Management (create, assign, update status)
+- Dashboard (task statistics, overdue tracking)
+- Role-Based Access Control (Admin / Member)
+- REST API with MongoDB database
+- Fully deployed and functional
 
 ---
 
@@ -34,16 +34,14 @@ This application fulfills all required assignment criteria:
 - Password hashing using bcrypt
 - Protected backend routes
 
----
-
 ### 🔑 Role-Based Access Control (RBAC)
 
-Admin:
+**Admin:**
 - Create and manage projects  
 - Add/remove members  
 - Create and assign tasks  
 
-Member:
+**Member:**
 - View assigned projects  
 - Update only their assigned tasks  
 
@@ -64,7 +62,7 @@ Member:
   - Deadline
   - Status (To Do / In Progress / Done)
 - Update task status
-- Persistent storage in MongoDB
+- Data stored in MongoDB
 
 ---
 
@@ -79,26 +77,26 @@ Member:
 
 ## 🛠️ Tech Stack
 
-### Frontend
+**Frontend**
 - React 18  
 - Vite  
-- Tailwind CSS v4  
-- React Router v6  
+- Tailwind CSS  
+- React Router  
 - Axios  
 
-### Backend
+**Backend**
 - Node.js  
 - Express.js  
 - JWT Authentication  
 
-### Database
+**Database**
 - MongoDB Atlas  
-- Mongoose ODM  
+- Mongoose  
 
-### Deployment
-- Frontend: Vercel  
-- Backend: Railway  
-- Database: MongoDB Atlas  
+**Deployment**
+- Vercel (Frontend)  
+- Railway (Backend)  
+- MongoDB Atlas (Database)  
 
 ---
 
@@ -136,19 +134,19 @@ This application follows a RESTful client-server architecture:
 
 ## 🧱 Database Design
 
-### User
+**User**
 - name  
 - email (unique)  
 - password (hashed)  
 - role (Admin / Member)  
 
-### Project
+**Project**
 - title  
 - description  
 - createdBy  
 - members[]  
 
-### Task
+**Task**
 - title  
 - description  
 - assignedTo  
@@ -156,42 +154,63 @@ This application follows a RESTful client-server architecture:
 - status  
 - deadline  
 
-### Relationships
+**Relationships**
 - One Project → Many Tasks  
 - One User → Many Assigned Tasks  
 
 ---
 
 ## 📂 Project Structure
-
-id="cwqk2u" /frontend   → React application   /backend    → Express API  
+team-task-manager/
+├── frontend/                # frontend (React)
+│   ├── public/
+│   ├── src/
+│   ├── .env
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md
+│
+├── backend/                # backend (Node/Express)
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   ├── .env
+│   ├── server.js
+│   ├── package.json
+│   └── README.md
+│
+├── .gitignore
+├── README.md
 
 ---
 
 ## ⚙️ Environment Variables
 
-### Backend (backend/.env)
-id="9pn03g" PORT=5001 MONGO_URI=your_mongodb_connection_string JWT_SECRET=your_secret CLIENT_URL=https://your-frontend-url.vercel.app
+### Backend (`server/.env`)
+PORT=5001
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_jwt_secret_key
+Frontend_URL=https://team-task-manager-sandy.vercel.app
 
-### Frontend (frontend/.env)
-id="yz42v4" VITE_API_URL=https://your-backend-url.up.railway.app/api
+### Frontend (`client/.env`)
+VITE_API_URL=https://team-task-manager-production-2380.up.railway.app/api
 
 ---
 
 ## 🚀 Installation & Setup
 
 ### Clone Repository
-id="7a0r2h" git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git cd YOUR_REPO_NAME
-
----
-
 ### Backend Setup
-id="gqv4c8" cd backend npm install npm run dev
-
----
+cd server
+npm install
+npm run dev
 
 ### Frontend Setup
-id="rb7f9z" cd frontend npm install npm run dev
+cd client
+npm install
+npm run dev
 
 ---
 
@@ -205,11 +224,11 @@ id="rb7f9z" cd frontend npm install npm run dev
 
 ## 🧪 Demo Credentials
 
-Admin
+**Admin**
 - Email: admin@test.com  
 - Password: password123  
 
-Member
+**Member**
 - Email: member@test.com  
 - Password: password123  
 
@@ -218,8 +237,8 @@ Member
 ## ✨ UI Highlights
 
 - Modern dark-themed UI  
-- Responsive design  
-- Clean and intuitive layout  
+- Fully responsive design  
+- Clean and intuitive dashboard  
 - Smooth user experience  
 
 ---
@@ -228,7 +247,7 @@ Member
 
 - Implementing secure JWT authentication  
 - Designing role-based access control  
-- Managing relationships between entities  
+- Managing relationships between users, projects, and tasks  
 - Handling full-stack deployment (Railway + Vercel)  
 
 ---
@@ -237,12 +256,12 @@ Member
 
 - Real-time updates (WebSockets)  
 - Drag-and-drop task board  
-- Notifications system  
-- Advanced filtering/search  
+- Notification system  
+- Advanced filtering and search  
 
 ---
 
 ## 👨‍💻 Author
 
-- Your Name  
+- Md Nawazish Karim  
 - GitHub: https://github.com/Nawazishkarim07  
