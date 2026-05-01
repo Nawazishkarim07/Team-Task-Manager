@@ -105,9 +105,38 @@ export default function Login() {
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950/80 via-transparent to-slate-950/80" />
       </div>
 
-{/* Content Container - Login Left, Banner Right (Side by Side) */}
+{/* Content Container - Banner Left, Login Right (Side by Side) */}
       <div className="relative z-10 w-full max-w-5xl flex flex-row items-center justify-between gap-12">
-        {/* Login Box - Left Side */}
+        {/* Banner - Left Side */}
+        <div className="flex-1 text-left">
+          <h1 
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white inline-block"
+            style={{
+              fontFamily: '"Press Start 2P", cursive',
+              textShadow: `
+                3px 3px 0 #0d9488,
+                -1px -1px 0 #14b8a6,
+                1px -1px 0 #0d9488,
+                -1px 1px 0 #14b8a6,
+                0 0 20px rgba(34,211,238,0.6),
+                0 0 40px rgba(6,182,212,0.4)
+              `,
+            }}
+          >
+            {displayText}
+            <span 
+              className="text-emerald-400"
+              style={{
+                opacity: showCursor ? 1 : 0,
+                animation: 'blink 0.5s infinite',
+              }}
+            >
+              .
+            </span>
+          </h1>
+        </div>
+
+        {/* Login Box - Right Side */}
         <div className="flex-1 max-w-md bg-slate-900/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-2xl border border-slate-700/50 transition duration-300 hover:border-slate-600">
           <div className="mb-6 text-center">
             <h2 className="text-2xl font-bold text-white tracking-tight">Welcome</h2>
@@ -178,40 +207,11 @@ export default function Login() {
             <button
               disabled={loading}
               className="inline-flex min-h-12 w-full items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-500 disabled:cursor-not-allowed disabled:bg-cyan-900 text-white font-semibold py-3 rounded-lg transition shadow-[0_0_15px_rgba(8,145,178,0.35)]"
->
+            >
               {loading && <ButtonSpinner />}
               {loading ? 'Please wait...' : mode === 'login' ? 'Authenticate' : 'Create Account'}
             </button>
           </form>
-        </div>
-
-        {/* Banner - Right Side */}
-        <div className="flex-1 text-right">
-          <h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white inline-block"
-            style={{
-              fontFamily: '"Press Start 2P", cursive',
-              textShadow: `
-                3px 3px 0 #0d9488,
-                -1px -1px 0 #14b8a6,
-                1px -1px 0 #0d9488,
-                -1px 1px 0 #14b8a6,
-                0 0 20px rgba(34,211,238,0.6),
-                0 0 40px rgba(6,182,212,0.4)
-              `,
-            }}
-          >
-            {displayText}
-            <span 
-              className="text-emerald-400"
-              style={{
-                opacity: showCursor ? 1 : 0,
-                animation: 'blink 0.5s infinite',
-              }}
-            >
-              .
-            </span>
-          </h1>
         </div>
       </div>
 
