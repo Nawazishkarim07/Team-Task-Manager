@@ -1,0 +1,40 @@
+# =========================
+# Node.js & Dependencies
+# =========================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment Variables (CRITICAL)
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Build Outputs
+# =========================
+dist/
+dist-ssr/
+build/
+out/
+
+# =========================
+# macOS System Files
+# =========================
+.DS_Store
+__MACOSX/
+*.swp
+
+# =========================
+# Editor & IDE Directories
+# =========================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
